@@ -1,5 +1,5 @@
 // contacts.dart
-class Contacts {
+class Contact {
   // Data required:
   String firstName;
   String lastName;
@@ -17,7 +17,7 @@ class Contacts {
   // String adress;
   // u.s.w. ...
 
-  Contacts({
+  Contact({
     required this.firstName,
     required this.lastName,
     required this.sex,
