@@ -5,7 +5,7 @@ class Invoice {
   double quantity;
   double taxPercent = 19;
   bool paid = false;
-  String invoiceNumber;
+  String invoiceID;
   String invoiceDate;
 
   // Data not required (but nice to have):
@@ -17,7 +17,7 @@ class Invoice {
     required this.quantity,
     required this.taxPercent,
     required this.paid,
-    required this.invoiceNumber,
+    required this.invoiceID,
     required this.invoiceDate,
   });
 }
