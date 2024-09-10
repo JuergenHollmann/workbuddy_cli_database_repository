@@ -32,6 +32,24 @@ class Contact {
         this.occupation = "",
         this.adress = "";
 }
-  void addContact(){
-    
-  }
+
+void addContact(
+  String contactID,
+  String firstName,
+  String lastName,
+  String sex,
+  int dayOfBirth,
+  int monthOfBirth,
+  int yearOfBirth,
+  String tel1,
+  String email1,
+  String tel2,
+  String email2,
+  String occupation,
+  String adress,
+  Contact newContact,
+) {
+  // Einen neuen Kontakt in die "Map contactData" einfügen:
+  Map contactData = {};
+  contactData[contactID] = newContact;
+}

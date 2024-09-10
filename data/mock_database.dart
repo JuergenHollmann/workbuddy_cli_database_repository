@@ -4,28 +4,33 @@ import '../models/contact.dart';
 import 'database_repository.dart';
 
 class MockDatabase implements DatabaseRepository {
-  Map todoData = {};
+  Map contactData = {};
 
   @override
-  void addContact(String contactID, Contact newContact) {
-    // Einen neuen Kontakt in die "Map todoData" einfügen:
-    todoData[contactID] = newContact;
-  }
-
-  // void addContact(
-  //     String contactID,
-  //     String firstName,
-  //     String lastName,
-  //     String sex,
-  //     int dayOfBirth,
-  //     int monthOfBirth,
-  //     int yearOfBirth,
-  //     String tel1,
-  //     String email1,
-  //     Contact newContact,) {
-  //   // Einen neuen Kontakt in die "Map todoData" einfügen:
-  //   todoData[contactID] = newContact;
+  // void addContact(String contactID, Contact newContact) {
+  // Einen neuen Kontakt in die "Map contactData" einfügen:
+  // contactData[contactID] = newContact;
   // }
+
+  void addContact(
+    String contactID,
+    String firstName,
+    String lastName,
+    String sex,
+    int dayOfBirth,
+    int monthOfBirth,
+    int yearOfBirth,
+    String tel1,
+    String email1,
+    String tel2,
+    String email2,
+    String occupation,
+    String adress,
+    Contact newContact,
+  ) {
+    // Einen neuen Kontakt in die "Map contactData" einfügen:
+    contactData[contactID] = newContact;
+  }
 
   // @override
   // List<String> getAllTodoTitles() {
@@ -49,23 +54,3 @@ class MockDatabase implements DatabaseRepository {
   //   }
   // }
 }
-
-// void main() {
-//   DatabaseRepository mockDatabase = MockDatabase();
-
-  // // Erster Eintrag in Datenbank Imitation
-  // Todo firstTodo = Todo(taskName: "Make Cofee", done: false);
-  // mockDatabase.addTodo("01", firstTodo);
-
-  // // Erster Eintrag in Datenbank Imitation
-  // Todo firstTodo = Todo(taskName: "Make Cofee", done: false);
-  // mockDatabase.addTodo("01", firstTodo);
-
-  // // Zweiter Eintrag in Datenbank Imitation
-  // Todo secondTodo = Todo(taskName: "Clean House", done: false);
-  // mockDatabase.addTodo("02", secondTodo);
-
-  // // Ausgabe aller Todo Namen
-  // List<String> myTodoNames = mockDatabase.getAllTodoTitles();
-  // print(myTodoNames);
-// }
