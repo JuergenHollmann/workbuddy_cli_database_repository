@@ -10,7 +10,6 @@ class Contact {
   int yearOfBirth;
   String tel1;
   String email1;
-
   // Data not required (but nice to have):
   String tel2;
   String email2;
@@ -33,3 +32,6 @@ class Contact {
         this.occupation = "",
         this.adress = "";
 }
+  void addContact(){
+    
+  }

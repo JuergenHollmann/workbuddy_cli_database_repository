@@ -7,10 +7,9 @@ class Invoice {
   bool paid = false;
   String invoiceID;
   String invoiceDate;
-
   // Data not required (but nice to have):
-  // String articleWhich;
-  // String articleWhere;
+  String articleWhich;
+  String articleWhere;
 
   Invoice({
     required this.itemPrice,
@@ -19,5 +18,6 @@ class Invoice {
     required this.paid,
     required this.invoiceID,
     required this.invoiceDate,
-  });
+  })  : this.articleWhich = "",
+        this.articleWhere = "";
 }
