@@ -1,46 +1,147 @@
 // database_repository.dart
-import "../models/contact.dart";
-//import "../models/invoice.dart";
+import '../models/contact.dart';
+import '../models/invoice.dart';
 
 abstract class DatabaseRepository {
-  // Create
-  // void addContact(
-  //   String contactID,
-  //   String firstName,
-  //   String lastName,
-  //   String sex,
-  //   int dayOfBirth,
-  //   int monthOfBirth,
-  //   int yearOfBirth,
-  //   String tel1,
-  //   String email1,
-  //   Contact newContact,
-  // );
+  // Einen Kontakt erstellen
+  void createContact(
+      String contactID,
+      String firstName,
+      String lastName,
+      String sex,
+      int dayOfBirth,
+      int monthOfBirth,
+      int yearOfBirth,
+      String tel1,
+      String email1,
+      String tel2,
+      String email2,
+      String occupation,
+      String adress);
 
-  //void addContact(String contactID, Contact newContact);
+  // Einen Kontakt aufrufen
+  void getContact(
+      String contactID,
+      String firstName,
+      String lastName,
+      String sex,
+      int dayOfBirth,
+      int monthOfBirth,
+      int yearOfBirth,
+      String tel1,
+      String email1,
+      String tel2,
+      String email2,
+      String occupation,
+      String adress);
 
-  void addContact(
-    String contactID,
-    String firstName,
-    String lastName,
-    String sex,
-    int dayOfBirth,
-    int monthOfBirth,
-    int yearOfBirth,
-    String tel1,
-    String email1,
-    String tel2,
-    String email2,
-    String occupation,
-    String adress,
-    Contact newContact,
-  );
+  // Alle Kontakte in einer Liste anzeigen lassen
+  List<Contact> getAllContacts();
 
-  // void addInvoice(Invoice newInvoice); // Parameter?
+  // Die Daten eines Kontaktes ändern
+  void updateContact(
+      String contactID,
+      String firstName,
+      String lastName,
+      String sex,
+      int dayOfBirth,
+      int monthOfBirth,
+      int yearOfBirth,
+      String tel1,
+      String email1,
+      String tel2,
+      String email2,
+      String occupation,
+      String adress);
 
-  // // Read
-  // List<String> getAllInvoicesList();
+  // einen Kontakt löschen
+  void deleteContact(
+      String contactID,
+      String firstName,
+      String lastName,
+      String sex,
+      int dayOfBirth,
+      int monthOfBirth,
+      int yearOfBirth,
+      String tel1,
+      String email1,
+      String tel2,
+      String email2,
+      String occupation,
+      String adress);
 
-  // // Delete
-  // void deleteInvoice(String invoiceID);
+  // Eine Rechnung neu erfassen oder erstellen
+  void addInvoice(
+      double itemPrice,
+      double quantity,
+      double taxPercent,
+      bool paid,
+      double invoiceID,
+      double invoiceDate,
+      double articleWhich,
+      double articleWhere);
+
+      // In einer Rechnung das Ergebnis berechnen lassen
+      void getInvoiceResult(){}
+  // double getInvoiceResult(double itemPrice, double quantity){
+    // itemPrice = 0;
+    // quantity = 0;
+  // }
+
+  // Eine Rechnung anzeigen lassen
+  void getInvoice(
+      double itemPrice,
+      double quantity,
+      double taxPercent,
+      bool paid,
+      double invoiceID,
+      double invoiceDate,
+      double articleWhich,
+      double articleWhere);
+
+  // Alle Rechnungen anzeigen lassen
+  void getAllInvoices(
+    double itemPrice,
+    double quantity,
+    double taxPercent,
+    bool paid,
+    double invoiceID,
+    double invoiceDate,
+    double articleWhich,
+    double articleWhere);
+    List<Invoice> allInvoices();
+
+  // Die Daten einer Rechnung ändern
+  void updateInvoice(
+      double itemPrice,
+      double quantity,
+      double taxPercent,
+      bool paid,
+      double invoiceID,
+      double invoiceDate,
+      double articleWhich,
+      double articleWhere);
+
+  // eine Rechnung löschen
+  void deleteInvoice(
+      double itemPrice,
+      double quantity,
+      double taxPercent,
+      bool paid,
+      double invoiceID,
+      double invoiceDate,
+      double articleWhich,
+      double articleWhere);
+
+  // Einen User erstellen
+  void createUser(String userName, String password);
+
+  // Einen User aufrufen
+  void getUser(String userName, String password);
+
+  // Die Daten eines Users ändern
+  void updateUser(String userName, String password);
+
+  // einen User löschen
+  void deleteUser(String userName, String password);
 }
