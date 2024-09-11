@@ -61,19 +61,41 @@ void main() {
 // // Ausgabe aller Todo Namen
 // List<String> myTodoNames = mockDatabase.getAllTodoTitles();
 // print(myTodoNames);
-  // String contactID = "";
-  //     String firstName = "";
-  //     String lastName = "";
-  //     String sex = "";
-  //     int dayOfBirth = 0;
-  //     int monthOfBirth = 0;
-  //     int yearOfBirth = 0,
-  //     String tel1 = "";
-  //     String email1 = "";
-  //     String tel2 = "";
-  //     String email2 = "";
-  //     String occupation = "";
-  //     String adress = "";
+// String contactID = "";
+//     String firstName = "";
+//     String lastName = "";
+//     String sex = "";
+//     int dayOfBirth = 0;
+//     int monthOfBirth = 0;
+//     int yearOfBirth = 0,
+//     String tel1 = "";
+//     String email1 = "";
+//     String tel2 = "";
+//     String email2 = "";
+//     String occupation = "";
+//     String adress = "";
 
-  // List getta = [1,2,3,4,5];
-  // List getAllContacts = ["contactID"]
+// List getta = [1,2,3,4,5];
+// List getAllContacts = ["contactID"]
+
+// testDatabase.addUser ("Viktor", "passwort123");
+// List<User> allUsers = testDatabase.getAllUsers ()f
+// //testDatabase. checkUserCredentials("Viktor", "17284f") printAllUsers (allUsers);
+// testDatabase. addUser ("Fadi", 'Call Of Duty 11');
+// printAllUsers (allUsers);
+// ｝
+// void printAllUsers (List<User> allUsers) {
+// for (User user in allUsers) {
+// print (user);
+// ｝
+
+// @override
+// bool checkUserCredentials(String userName, String password) {
+//   for (User currentUser in _users) {
+//     if (currentUser.userName == userName) {
+//       if (currentUser.password == password) {
+//         return true;
+//       }
+//     }
+//   }
+// }
