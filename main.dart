@@ -1,9 +1,9 @@
 import "dart:io" show stdin, stdout;
 import "data/database_repository.dart";
 import "data/mock_database.dart";
-import "models/contact.dart";
-//import "models/invoice.dart";
 //import "functions/get_invoice_result.dart";
+import "models/contact.dart";
+import "models/invoice.dart";
 import "functions/check_username.dart";
 import "functions/check_password.dart";
 
@@ -146,20 +146,24 @@ void main() {
 // -> erledigt in function "getInvoiceResult".
 // Nach der MwSt.-Berechnung die Zwischensumme mit der Anzahl der Artikel multiplizieren.
 // -> erledigt in function "getInvoiceResult".
+
 // 5) Das Ergebnis der Berechnung ausgeben:
-// -> erledigt in function "getInvoiceResult".
+// -> funktioniert in der Methode "getInvoiceResult".
+// -> funktioniert in der Klasse Invoice mit "import "models/invoice.dart";"
             print(
                 "---------------------------------------------------------------------");
-            double itemPrice = double.parse(
-                userChoiceInput4d); // "itemPrice" ist ein "double" und "userChoiceInput4d" ist ein "String" --> umgewandelt mit "double.parse(userChoiceInput4d)."
-            double quantity = double.parse(userChoiceInput4c);
+            Invoice testInvoice = Invoice(
+                itemPrice: double.parse(userChoiceInput4d),
+                quantity: double.parse(userChoiceInput4c),
+                taxPercent: 19,
+                paid: true,
+                invoiceID: "12345",
+                invoiceDate: "12.09.2024");
+            testInvoice.getInvoiceResult(double.parse(userChoiceInput4d),
+                double.parse(userChoiceInput4c));
+
             print(
-                // "Du hast bei $userChoiceInput4a für $userChoiceInput4c Stück $userChoiceInput4b einen Betrag über ${getInvoiceResult(itemPrice, quantity).toStringAsFixed(2)} € ausgegeben.");
-
-                // "Du hast bei $userChoiceInput4a für $userChoiceInput4c Stück $userChoiceInput4b einen Betrag über ${Invoice(itemPrice: 100, quantity: 1, taxPercent: 19, paid: true, invoiceID: "12345", invoiceDate: "2")} € ausgegeben.");
-
-                "Du hast bei $userChoiceInput4a für $userChoiceInput4c Stück $userChoiceInput4b einen Betrag über ${itemPrice.toStringAsFixed(2)} * ${quantity.toStringAsFixed(2)} € ausgegeben.");
-
+                "Du hast bei $userChoiceInput4a für $userChoiceInput4c Stück $userChoiceInput4b einen Betrag über ${testInvoice.getInvoiceResult(double.parse(userChoiceInput4d), double.parse(userChoiceInput4c)).toStringAsFixed(2)} € ausgegeben.");
             print(
                 "---------------------------------------------------------------------");
             isMenuPartTwoRunning = false;
@@ -171,9 +175,7 @@ void main() {
   }
   print(
       "---------------------------------------------------------------------");
-
   DatabaseRepository mockDatabase = MockDatabase();
-
   // Eintrag in die Datenbank vorbereiten:
   Contact newContact = Contact(
       contactID: "12345",
@@ -203,12 +205,9 @@ void main() {
       "Putzi@Müller.de",
       "Bäcker",
       "73525 Müllhausen / Straße 22");
-
   mockDatabase.getUser("Putzi", "1234567890");
-
 //mockDatabase.getAllContacts();
 //List<Invoice> allInvoices();
-
 // Alle Kontakte in einer Liste anzeigen lassen
   List<Contact> allMyContacts = mockDatabase.getAllContacts();
   Contact(
