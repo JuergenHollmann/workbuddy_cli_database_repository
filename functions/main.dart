@@ -1,5 +1,5 @@
 import "dart:io" show stdin, stdout;
-import "get_invoice_result.dart";
+import "../functions_outsourced/get_invoice_result.dart";
 import "check_username.dart";
 import "check_password.dart";
 

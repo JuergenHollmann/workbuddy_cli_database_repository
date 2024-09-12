@@ -1,7 +1,6 @@
 import "dart:io" show stdin, stdout;
 import "data/database_repository.dart";
 import "data/mock_database.dart";
-//import "functions/get_invoice_result.dart";
 import "models/contact.dart";
 import "models/invoice.dart";
 import "functions/check_username.dart";
@@ -94,7 +93,7 @@ void main() {
             "---------------------------------------------------------------------");
 // Eingabe des Benutzers.
         String userChoiceInput = stdin.readLineSync()!;
-        print("Du hast [$userChoiceInput] = \"Quittung\" eingegeben.");
+        print("Du hast [$userChoiceInput] eingegeben.");
         print(
             "---------------------------------------------------------------------");
 // Überprüfen, was der Benutzer eingegeben hat und ob das einem der cases entspricht:
