@@ -172,105 +172,114 @@ void main() {
       }
     }
   }
+// Erneute Abfrage des Benutzers nach Eingabe der Quittung als "class" coden
   print(
       "---------------------------------------------------------------------");
-  DatabaseRepository mockDatabase = MockDatabase();
-  // Eintrag in die Datenbank vorbereiten:
-  Contact newContact = Contact(
-      contactID: "12345",
-      firstName: "Klaus",
-      lastName: "Maier",
-      sex: "male",
-      dayOfBirth: 02,
-      monthOfBirth: 02,
-      yearOfBirth: 1990,
-      tel1: "07171-12345-67890",
-      email1: "test@test");
-  print(
-      "Der neue Kontakt ${newContact.firstName} ${newContact.lastName} wurde mit der Kontakt-ID ${newContact.contactID} eingetragen.");
+  print("Was möchtest du jetzt tun?");
+  print("[1] Einen neuen Kontakt anlegen.");
+  print("[X] Die App beenden");
+  print("Bitte alle Eingaben mit \"Enter\" bestätigen.");
   print(
       "---------------------------------------------------------------------");
-  mockDatabase.createContact(
-      "65432",
-      "Josef",
-      "Müller",
-      "männlich",
-      10,
-      10,
-      1970,
-      "0170-1234567",
-      "Josef@Mmüller.de",
-      "keine",
-      "Putzi@Müller.de",
-      "Bäcker",
-      "73525 Müllhausen / Straße 22");
-  mockDatabase.getUser("Putzi", "1234567890");
+// Eingabe des Benutzers.
+  String userChoiceInput = stdin.readLineSync()!;
+  print(
+      "---------------------------------------------------------------------");
+  switch (userChoiceInput) {
+// 2) Der Benutzer möchte das Programm beenden.
+    case "x" || "X":
+      isMenuPartOneRunning = false;
+      print("Du hast [$userChoiceInput] = \"Beenden\" eingegeben.");
+      print(
+          "---------------------------------------------------------------------");
+      print("Die App wurde vom User beendet.");
+      print(
+          "---------------------------------------------------------------------");
+    case "1":
+      DatabaseRepository mockDatabase = MockDatabase();
+      // Eintrag in die Datenbank vorbereiten:
+      Contact newContact = Contact(
+          contactID: "12345",
+          firstName: "Klaus",
+          lastName: "Maier",
+          sex: "male",
+          dayOfBirth: 02,
+          monthOfBirth: 02,
+          yearOfBirth: 1990,
+          tel1: "07171-12345-67890",
+          email1: "test@test");
+      print(
+          "Der neue Kontakt ${newContact.firstName} ${newContact.lastName} wurde mit der Kontakt-ID ${newContact.contactID} eingetragen.");
+      print(
+          "---------------------------------------------------------------------");
+
+      mockDatabase.createContact(
+          "65432",
+          "Josef",
+          "Müller",
+          "männlich",
+          10,
+          10,
+          1970,
+          "0170-1234567",
+          "Josef@Mmüller.de",
+          "keine",
+          "Putzi@Müller.de",
+          "Bäcker",
+          "73525 Müllhausen / Straße 22");
+      mockDatabase.getUser("Putzi", "1234567890");
+
+// default:
+//         print("Deine Eingabe --> $userChoiceInput <-- war ungültig!");
+//   }
+
 //mockDatabase.getAllContacts();
 //List<Invoice> allInvoices();
 // Alle Kontakte in einer Liste anzeigen lassen
-  List<Contact> allMyContacts = mockDatabase.getAllContacts();
-  Contact(
-      contactID: "765432345",
-      firstName: "Bert",
-      lastName: "Schreiner",
-      sex: "männlich",
-      dayOfBirth: 10,
-      monthOfBirth: 10,
-      yearOfBirth: 1980,
-      tel1: "000111",
-      email1: "email1");
-  print(allMyContacts);
-  print(
-      "---------------------------------------------------------------------");
-  // den Text aus der Klasse "Contact" bei "@override String toString()" ausdrucken:
-  print(Contact(
-      contactID: "123456",
-      firstName: "Jürgen",
-      lastName: "Hollmann",
-      sex: "male",
-      dayOfBirth: 29,
-      monthOfBirth: 02,
-      yearOfBirth: 1964,
-      tel1: "071711234567890",
-      email1: "test@test"));
+      List<Contact> allMyContacts = mockDatabase.getAllContacts();
+      Contact(
+          contactID: "765432345",
+          firstName: "Bert",
+          lastName: "Schreiner",
+          sex: "männlich",
+          dayOfBirth: 10,
+          monthOfBirth: 10,
+          yearOfBirth: 1980,
+          tel1: "000111",
+          email1: "email1");
+      print(allMyContacts);
+      print(
+          "---------------------------------------------------------------------");
+      // den Text aus der Klasse "Contact" bei "@override String toString()" ausdrucken:
+      print(Contact(
+          contactID: "123456",
+          firstName: "Jürgen",
+          lastName: "Hollmann",
+          sex: "male",
+          dayOfBirth: 29,
+          monthOfBirth: 02,
+          yearOfBirth: 1964,
+          tel1: "071711234567890",
+          email1: "test@test"));
+
+    default:
+      print("Deine Eingabe --> $userChoiceInput <-- war ungültig!");
+  }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // mockDatabase.addContact(
-  //     "123434",
-  //     "Paul",
-  //     "Müller",
-  //     "male",
-  //     01,
-  //     01,
-  //     1980,
-  //     "0123456",
-  //     "test2@test",
-  //     "tel2",
-  //     "email2",
-  //     "occupation",
-  //     "adress",
-  //     newContact);
+// mockDatabase.addContact(
+//     "123434",
+//     "Paul",
+//     "Müller",
+//     "male",
+//     01,
+//     01,
+//     1980,
+//     "0123456",
+//     "test2@test",
+//     "tel2",
+//     "email2",
+//     "occupation",
+//     "adress",
+//     newContact);
