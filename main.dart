@@ -19,18 +19,18 @@ void main() {
   bool isMenuPartOneRunning = true;
   bool isMenuPartTwoRunning = false;
 
-// Wie lange läuft der erste Teil des Programms?
+  // Wie lange läuft der erste Teil des Programms?
   while (isMenuPartOneRunning) {
     print(
         "Was möchtest du jetzt tun? \n * Jetzt ei[n]loggen \n * Die App [b]eenden \n Bitte alle Eingaben mit \"Enter\" bestätigen.");
     print(
         "---------------------------------------------------------------------");
-// Eingabe des Benutzers.
+    // Eingabe des Benutzers
     String userChoiceInput = stdin.readLineSync()!;
     print(
         "---------------------------------------------------------------------");
     switch (userChoiceInput) {
-// 2) Der Benutzer möchte das Programm beenden.
+      // 2) Der Benutzer möchte das Programm beenden.
       case "b" || "B":
         isMenuPartOneRunning = false;
         print("Du hast [$userChoiceInput] = \"Beenden\" eingegeben.");
@@ -39,16 +39,16 @@ void main() {
         print("Die App wurde vom User beendet.");
         print(
             "---------------------------------------------------------------------");
-// 1) Der Benutzer möchte sich mit seinem Benutzernamen und Passwort einloggen:
+      // 1) Der Benutzer möchte sich mit seinem Benutzernamen und Passwort einloggen:
       case "n" || "N":
         print("Du hast [$userChoiceInput] = \"Einloggen\" eingegeben.");
         print(
             "---------------------------------------------------------------------");
-// 1a) Der Benutzer muss seinen Benutzernamen eingeben:
+        // 1a) Der Benutzer muss seinen Benutzernamen eingeben:
         stdout.write("Bitte gib deinen Benutzernamen ein: ");
         String inputUserName = stdin.readLineSync()!;
         print("Du hast \"$inputUserName\" als Benutzername eingegeben.");
-// Überprüfen ob der Benutzername korrekt ist --> mit functionCheckUserName:
+        // Überprüfen ob der Benutzername korrekt ist --> mit functionCheckUserName:
         User testUser = User(
             userName: inputUserName, password: inputUserName); // inputPassword
         if (testUser.checkUserName(inputUserName) == true) {
@@ -63,11 +63,11 @@ void main() {
         }
         print(
             "---------------------------------------------------------------------");
-// 1b) Der Benutzer muss sein Passwort eingeben:
+        // 1b) Der Benutzer muss sein Passwort eingeben:
         stdout.write("Bitte gib dein Passwort ein: ");
         String inputPassword = stdin.readLineSync()!;
         print("Du hast \"$inputPassword\" als Passwort eingegeben.");
-// Überprüfen ob das Passwort korrekt ist --> mit functionCheckPassword:
+        // Überprüfen ob das Passwort korrekt ist --> mit functionCheckPassword:
         User userPassword =
             User(userName: inputUserName, password: inputPassword);
         if (userPassword.checkPassword(inputPassword) == true) {
@@ -88,21 +88,21 @@ void main() {
         print("Deine Eingabe --> $userChoiceInput <-- war ungültig!");
     }
     if (isMenuPartTwoRunning) {
-// Wenn es in den nächsten Bereich gehen soll: Wie lange läuft der zweite Teil des Programms?
+      // Wenn es in den nächsten Bereich gehen soll: Wie lange läuft der zweite Teil des Programms?
       while (isMenuPartTwoRunning) {
         isMenuPartTwoRunning = true;
         print(
             "Was möchtest du jetzt tun? \n * Eine Qui[t]tung eingeben \n * Die App [b]eenden \n Bitte die Eingabe mit \"Enter\" bestätigen.");
         print(
             "---------------------------------------------------------------------");
-// Eingabe des Benutzers.
+        // Eingabe des Benutzers.
         String userChoiceInput = stdin.readLineSync()!;
         print("Du hast [$userChoiceInput] eingegeben.");
         print(
             "---------------------------------------------------------------------");
-// Überprüfen, was der Benutzer eingegeben hat und ob das einem der cases entspricht:
+        // Überprüfen, was der Benutzer eingegeben hat und ob das einem der cases entspricht:
         switch (userChoiceInput) {
-// 2) Der Benutzer mmöchte das Programm beenden.
+// 2) Der Benutzer mmöchte das Programm beenden. Das wird hier wiederholt uns ollte als Klasse oder Funktion ausgegleidert werden.
           case "b" || "B":
             isMenuPartTwoRunning = false;
             print("Du hast [$userChoiceInput] = \"Beenden\" eingegeben.");
@@ -111,21 +111,21 @@ void main() {
             print("Die App wurde vom User beendet.");
             print(
                 "---------------------------------------------------------------------");
-// 3) Der Benutzer möchte jetzt eine Quittung eingeben.
+          // 3) Der Benutzer möchte jetzt eine Quittung eingeben.
           case "t" || "T":
-// 4a) Der Benutzer muss eingeben, bei welchem Händler er eingekauft hat.
+            // 4a) Der Benutzer muss eingeben, bei welchem Händler er eingekauft hat.
             stdout.write("Wo warst Du beim Einkaufen?                    ");
             String userChoiceInput4a = stdin.readLineSync()!;
             print("Du warst einkaufen bei \"$userChoiceInput4a.\"");
             print(
                 "---------------------------------------------------------------------");
-// 4b) Der Benutzer muss eingeben, welchen Artikel er bei dem Händler eingekauft hat.
+            // 4b) Der Benutzer muss eingeben, welchen Artikel er bei dem Händler eingekauft hat.
             stdout.write("Welchen Artikel hast Du gekauft?               ");
             String userChoiceInput4b = stdin.readLineSync()!;
             print("Du hast dort den Artikel \"$userChoiceInput4b\" gekauft.");
             print(
                 "---------------------------------------------------------------------");
-// 4c) Der Benutzer muss eingeben, wieviel Stück er von dem Artikel eingekauft hat.
+            // 4c) Der Benutzer muss eingeben, wieviel Stück er von dem Artikel eingekauft hat.
             stdout.write(
                 "Wieviel Stück von dem Artikel hast Du gekauft? "); // xxxPrice
             String userChoiceInput4c = stdin.readLineSync()!;
@@ -141,7 +141,7 @@ void main() {
 //   }
 //   print("----------------------------------------------");
 // }
-// 4d) Der Benutzer muss eingeben, was 1 Stück von dem Artikel kostet.
+            // 4d) Der Benutzer muss eingeben, was 1 Stück von dem Artikel kostet.
             stdout.write("Was hat der Artikel (in €) gekostet?           ");
             String userChoiceInput4d = stdin.readLineSync()!;
 // Überprüfen, ob der User hier NUR Ziffern (als double und mit max. einem Punkt und "0" darf erlaubt sein) eingegeben hat.
@@ -150,9 +150,9 @@ void main() {
 // Nach der MwSt.-Berechnung die Zwischensumme mit der Anzahl der Artikel multiplizieren.
 // -> erledigt in function "getInvoiceResult".
 
-// 5) Das Ergebnis der Berechnung ausgeben:
-// -> funktioniert in der Methode "getInvoiceResult".
-// -> funktioniert in der Klasse Invoice mit "import "models/invoice.dart";"
+            // 5) Das Ergebnis der Berechnung ausgeben:
+            // -> funktioniert in der Methode "getInvoiceResult".
+            // -> funktioniert in der Klasse Invoice mit "import "models/invoice.dart";"
             print(
                 "---------------------------------------------------------------------");
             Invoice testInvoice = Invoice(
@@ -185,7 +185,7 @@ void main() {
   print("Bitte alle Eingaben mit \"Enter\" bestätigen.");
   print(
       "---------------------------------------------------------------------");
-// Eingabe des Benutzers.
+  // Eingabe des Benutzers.
   String userChoiceInput = stdin.readLineSync()!;
   print(
       "---------------------------------------------------------------------");
@@ -216,7 +216,6 @@ void main() {
           "Der neue Kontakt ${newContact.firstName} ${newContact.lastName} wurde mit der Kontakt-ID ${newContact.contactID} eingetragen.");
       print(
           "---------------------------------------------------------------------");
-
       mockDatabase.createContact(
           "65432",
           "Josef",
