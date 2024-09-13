@@ -3,6 +3,24 @@ import '../models/contact.dart';
 import '../models/invoice.dart';
 
 abstract class DatabaseRepository {
+  // Einen User erstellen
+  void createUser(String userName, String password);
+
+  // Überprüfen ob der Benutzername korrekt ist
+  bool checkUserName(String inputUserName);
+
+  // Überprüfen ob das Passwort korrekt ist
+  bool checkPassword(String inputPassword);
+
+  // Einen User aufrufen
+  void getUser(String userName, String password);
+
+  // Die Daten eines Users ändern
+  void updateUser(String userName, String password);
+
+  // einen User löschen
+  void deleteUser(String userName, String password);
+
   // Einen Kontakt erstellen
   void createContact(
       String contactID,
@@ -81,12 +99,8 @@ abstract class DatabaseRepository {
       double articleWhich,
       double articleWhere);
 
-      // In einer Rechnung das Ergebnis berechnen lassen
-      void getInvoiceResult(){}
-  // double getInvoiceResult(double itemPrice, double quantity){
-    // itemPrice = 0;
-    // quantity = 0;
-  // }
+  // In einer Rechnung das Ergebnis berechnen lassen
+  void getInvoiceResult() {}
 
   // Eine Rechnung anzeigen lassen
   void getInvoice(
@@ -101,15 +115,15 @@ abstract class DatabaseRepository {
 
   // Alle Rechnungen anzeigen lassen
   void getAllInvoices(
-    double itemPrice,
-    double quantity,
-    double taxPercent,
-    bool paid,
-    double invoiceID,
-    double invoiceDate,
-    double articleWhich,
-    double articleWhere);
-    List<Invoice> allInvoices();
+      double itemPrice,
+      double quantity,
+      double taxPercent,
+      bool paid,
+      double invoiceID,
+      double invoiceDate,
+      double articleWhich,
+      double articleWhere);
+  List<Invoice> allInvoices();
 
   // Die Daten einer Rechnung ändern
   void updateInvoice(
@@ -132,16 +146,4 @@ abstract class DatabaseRepository {
       double invoiceDate,
       double articleWhich,
       double articleWhere);
-
-  // Einen User erstellen
-  void createUser(String userName, String password);
-
-  // Einen User aufrufen
-  void getUser(String userName, String password);
-
-  // Die Daten eines Users ändern
-  void updateUser(String userName, String password);
-
-  // einen User löschen
-  void deleteUser(String userName, String password);
 }

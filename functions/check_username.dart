@@ -20,5 +20,5 @@ bool functionCheckUserName(String inputUserName) {
     result = false;
   }
   return result;
-}
 // print(functionCheckUserName(inputUserName)); // gibt den bool-Wert zurück
+}
