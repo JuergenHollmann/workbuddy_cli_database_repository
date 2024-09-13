@@ -15,21 +15,6 @@ class User {
     // code
   }
 
-  // Einen User aufrufen
-  void getUser(String userName, String password) {
-    // print("Benutzername: $userName Passwort: $password");
-  }
-
-  // Die Daten eines Users ändern
-  void updateUser(String userName, String password) {
-    // code
-  }
-
-  // einen User löschen
-  void deleteUser(String userName, String password) {
-    // code
-  }
-
 // Überprüfen ob der Benutzername korrekt ist
 // aus der function übernommen - check_username.dart
   bool checkUserName(String inputUserName) {
@@ -58,4 +43,20 @@ class User {
     return result;
 // print(functionCheckPassword(inputPassword)); // gibt den bool-Wert zurück
   }
+
+  // Einen User aufrufen
+  void getUser(String userName, String password) {
+    // print("Benutzername: $userName Passwort: $password");
+  }
+
+  // Die Daten eines Users ändern
+  void updateUser(String userName, String password) {
+    // code
+  }
+
+  // einen User löschen
+  void deleteUser(String userName, String password) {
+    // code
+  }
+
 }

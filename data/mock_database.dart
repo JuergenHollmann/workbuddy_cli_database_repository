@@ -1,4 +1,5 @@
 // mock_database.dart
+
 import '../models/contact.dart';
 // import '../models/invoice.dart';
 // import '../models/user.dart';
@@ -7,6 +8,16 @@ import '../models/invoice.dart';
 import 'database_repository.dart';
 
 class MockDatabase implements DatabaseRepository {
+  @override
+  void checkUserName(String inputUserName){}
+  // bool checkUserName(String inputUserName) {
+  //   throw UnimplementedError();
+  // }
+
+  // @override
+  // Void checkPassword(String inputPassword) {}
+
+
   @override
   void addInvoice(
       double itemPrice,
@@ -171,11 +182,10 @@ class MockDatabase implements DatabaseRepository {
   List<Invoice> allInvoices() {
     throw UnimplementedError();
   }
-  
+
   @override
-  void getInvoiceResult() {
-  }
-  
+  void getInvoiceResult() {}
+
   // @override
   // double getInvoiceResult(double itemPrice, double quantity) {
   //      itemPrice = 0;

@@ -3,8 +3,8 @@ import "data/database_repository.dart";
 import "data/mock_database.dart";
 import "models/contact.dart";
 import "models/invoice.dart";
-import "functions/check_username.dart";
 import "functions/check_password.dart";
+import "models/user.dart";
 
 void main() {
   stdout.write("\x1B[2J\x1B[0;0H");
@@ -50,7 +50,9 @@ void main() {
         String inputUserName = stdin.readLineSync()!;
         print("Du hast \"$inputUserName\" als Benutzername eingegeben.");
 // Überprüfen ob der Benutzername korrekt ist --> mit functionCheckUserName:
-        if (functionCheckUserName(inputUserName) == true) {
+        User testUser = User(
+            userName: inputUserName, password: inputUserName); // inputPassword
+        if (testUser.checkUserName(inputUserName) == true) {
           print(
               "Der Benutzername \"$inputUserName\" wurde \u{1f600} korrekt \u{1f600} eingegeben!"); // \u{1f600} = 😀
         } else {
@@ -62,6 +64,7 @@ void main() {
         }
         print(
             "---------------------------------------------------------------------");
+
 // 1b) Der Benutzer muss sein Passwort eingeben:
         stdout.write("Bitte gib dein Passwort ein: ");
         String inputPassword = stdin.readLineSync()!;
