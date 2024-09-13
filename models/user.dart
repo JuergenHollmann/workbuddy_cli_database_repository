@@ -15,23 +15,20 @@ class User {
     // code
   }
 
-// Überprüfen ob der Benutzername korrekt ist
-// aus der function übernommen - check_username.dart
+  // Überprüfen ob der Benutzername korrekt ist
   bool checkUserName(String inputUserName) {
     String checkUserName = "Jürgen";
     bool result = false;
     if (checkUserName == inputUserName) {
       result = true;
-    } else if (checkUserName != inputUserName) {
-      // das "if" ist eigentlich überflüssig, nur zur Übung!
+    } else {
+      // so könte man das hier auch machen } else if (checkUserName != inputUserName) {
       result = false;
     }
     return result;
-// print(functionCheckUserName(inputUserName)); // gibt den bool-Wert zurück
   }
 
 // Überprüfen ob das Passwort korrekt ist
-// aus der function übernommen - check_password.dart
   bool checkPassword(String inputPassword) {
     String checkPassword = "Passwort";
     bool result = false;
@@ -41,7 +38,6 @@ class User {
       result = false;
     }
     return result;
-// print(functionCheckPassword(inputPassword)); // gibt den bool-Wert zurück
   }
 
   // Einen User aufrufen
@@ -58,5 +54,4 @@ class User {
   void deleteUser(String userName, String password) {
     // code
   }
-
 }

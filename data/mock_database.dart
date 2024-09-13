@@ -10,13 +10,9 @@ import 'database_repository.dart';
 class MockDatabase implements DatabaseRepository {
   @override
   void checkUserName(String inputUserName){}
-  // bool checkUserName(String inputUserName) {
-  //   throw UnimplementedError();
-  // }
 
-  // @override
-  // Void checkPassword(String inputPassword) {}
-
+  @override
+  void checkPassword(String inputPassword) {}
 
   @override
   void addInvoice(

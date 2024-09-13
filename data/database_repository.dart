@@ -9,8 +9,8 @@ abstract class DatabaseRepository {
   // Überprüfen ob der Benutzername korrekt ist
   void checkUserName(String inputUserName);
 
-  // // Überprüfen ob das Passwort korrekt ist
-  // void checkPassword(String inputPassword);
+  // Überprüfen ob das Passwort korrekt ist
+  void checkPassword(String inputPassword);
 
   // Einen User aufrufen
   void getUser(String userName, String password);
