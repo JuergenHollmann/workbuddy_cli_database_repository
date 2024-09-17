@@ -12,7 +12,8 @@ class User {
 
   // Einen User erstellen
   void createUser(String userName, String password) {
-    // code
+ // User newUser = User (userName: userName, password: password);
+ // newUser.toString();
   }
 
   // Überprüfen ob der Benutzername korrekt ist
