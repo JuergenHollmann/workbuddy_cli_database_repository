@@ -86,6 +86,7 @@ void main() {
         isMenuPartTwoRunning = true;
       default:
         print("Deine Eingabe --> $userChoiceInput <-- war ungültig!");
+// Bei ungültiger Eingabe soll wieder zur Start-Eingabe gesprungen werden.            
     }
     if (isMenuPartTwoRunning) {
       // Wenn es in den nächsten Bereich gehen soll: Wie lange läuft der zweite Teil des Programms?
@@ -129,8 +130,37 @@ void main() {
             stdout.write(
                 "Wieviel Stück von dem Artikel hast Du gekauft? "); // xxxPrice
             String userChoiceInput4c = stdin.readLineSync()!;
+
 // Überprüfen, ob der User hier NUR Ziffern und mit max. einem Punkt eingegeben hat.
+// Invoice checkQuantityFormat Invoice(itemPrice: double.parse(userChoiceInput4c),
+//                 quantity: double.parse(userChoiceInput4c),
+//                 taxPercent: 19,
+//                 paid: true,
+//                 invoiceID: "12345",
+//                 invoiceDate: "12.09.2024");
+
+// // checkIfQuantityNumFormat.checkQuantityFormat(double.parse(userChoiceInput4c),
+// //                 double.parse(userChoiceInput4c));
+
 //   String input = "$userChoiceInput4c";
+//   if (int.tryParse(input) != null) {
+//             print(
+//                 "---------------------------------------------------------------------");
+//     print("Deine Eingabe ist numerisch: --> $input <--");
+//   } else {
+//             print(
+//                 "---------------------------------------------------------------------");
+//     print("Deine Eingabe ist NICHT numerisch: --> $input <--");
+//     print("Es sind nur Ziffern von 0 bis 9 und ein Punkt erlaubt!");
+//   }
+//             print(
+//                 "---------------------------------------------------------------------");
+
+
+
+
+
+//String input = "$userChoiceInput4c";
 //   if (int.tryParse(input) != null) {
 //     print("----------------------------------------------");
 //     print("Deine Eingabe ist numerisch: --> $input <--");
@@ -162,6 +192,7 @@ void main() {
                 paid: true,
                 invoiceID: "12345",
                 invoiceDate: "12.09.2024");
+
             testInvoice.getInvoiceResult(double.parse(userChoiceInput4d),
                 double.parse(userChoiceInput4c));
 
@@ -172,6 +203,7 @@ void main() {
             isMenuPartTwoRunning = false;
           default:
             print("Deine Eingabe --> $userChoiceInput <-- war ungültig!");
+// Bei ungültiger Eingabe soll wieder zur Start-Eingabe gesprungen werden.            
         }
       }
     }
@@ -234,6 +266,7 @@ void main() {
 
 // default:
 //         print("Deine Eingabe --> $userChoiceInput <-- war ungültig!");
+// // Bei ungültiger Eingabe soll wieder zur Start-Eingabe gesprungen werden.            
 //   }
 
 //mockDatabase.getAllContacts();
@@ -267,6 +300,7 @@ void main() {
 
     default:
       print("Deine Eingabe --> $userChoiceInput <-- war ungültig!");
+// Bei ungültiger Eingabe soll wieder zur Start-Eingabe gesprungen werden.            
   }
 }
 

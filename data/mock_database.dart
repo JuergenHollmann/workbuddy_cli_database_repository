@@ -9,7 +9,7 @@ import 'database_repository.dart';
 
 class MockDatabase implements DatabaseRepository {
   @override
-  void checkUserName(String inputUserName){}
+  void checkUserName(String inputUserName) {}
 
   @override
   void checkPassword(String inputPassword) {}
@@ -181,6 +181,9 @@ class MockDatabase implements DatabaseRepository {
 
   @override
   void getInvoiceResult() {}
+
+  @override
+  void checkIfQuantityNumFormat(double quantity) {}
 
   // @override
   // double getInvoiceResult(double itemPrice, double quantity) {

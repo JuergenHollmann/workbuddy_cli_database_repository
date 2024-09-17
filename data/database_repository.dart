@@ -102,6 +102,9 @@ abstract class DatabaseRepository {
   // In einer Rechnung das Ergebnis berechnen lassen
   void getInvoiceResult() {}
 
+  // Überprüfen, ob der User hier NUR Ziffern und mit max. einem Punkt eingegeben hat.
+  void checkIfQuantityNumFormat(double quantity){}
+
   // Eine Rechnung anzeigen lassen
   void getInvoice(
       double itemPrice,

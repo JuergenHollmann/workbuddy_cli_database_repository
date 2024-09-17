@@ -28,6 +28,30 @@ class Invoice {
     return "($itemPrice $quantity $taxPercent $paid $invoiceID $invoiceDate $articleWhich $articleWhere)";
   }
 
+// Überprüfen, ob der User hier NUR Ziffern und mit max. einem Punkt eingegeben hat.
+
+// double checkIfQuantityNumFormat(double quantity){
+
+//   String input = "$quantity";
+//   if (int.tryParse(input) != null) {
+//             print(
+//                 "---------------------------------------------------------------------");
+//     print("Deine Eingabe ist numerisch: --> $input <--");
+//   } else {
+//             print(
+//                 "---------------------------------------------------------------------");
+//     print("Deine Eingabe ist NICHT numerisch: --> $input <--");
+//     print("Es sind nur Ziffern von 0 bis 9 und ein Punkt erlaubt!");
+//   }
+//             print(
+//                 "---------------------------------------------------------------------");
+
+
+
+
+
+
+
   // Eine Rechnung neu erfassen oder erstellen
   void addInvoice(
       double itemPrice,
