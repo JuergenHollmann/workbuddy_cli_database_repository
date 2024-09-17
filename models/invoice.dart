@@ -46,12 +46,6 @@ class Invoice {
 //             print(
 //                 "---------------------------------------------------------------------");
 
-
-
-
-
-
-
   // Eine Rechnung neu erfassen oder erstellen
   void addInvoice(
       double itemPrice,
@@ -78,22 +72,24 @@ class Invoice {
   }
 
   // Alle Rechnungen anzeigen lassen
-  void getAllInvoices(
-      double itemPrice,
-      double quantity,
-      double taxPercent,
-      bool paid,
-      double invoiceID,
-      double invoiceDate,
-      double articleWhich,
-      double articleWhere) {
-// List<Invoice> allInvoices() { //todo
-// List<Invoice> listAllInvoices = MockDatabase.getAllInvoicesList();
-// print(listAllInvoices);
+  // void getAllInvoices(
+  //     double itemPrice,
+  //     double quantity,
+  //     double taxPercent,
+  //     bool paid,
+  //     double invoiceID,
+  //     double invoiceDate,
+  //     double articleWhich,
+  //     double articleWhere) {
 
-    print(
-        "$itemPrice $quantity $taxPercent $paid $invoiceID $invoiceDate $articleWhich $articleWhere");
-  }
+  // List<Invoice> getAllInvoices() {
+  //   //todo
+  //   List<Invoice> listAllInvoices = MockDatabase.getAllInvoicesList();
+  //   print(listAllInvoices);
+
+  //   print(
+  //       "$itemPrice $quantity $taxPercent $paid $invoiceID $invoiceDate $articleWhich $articleWhere");
+  // }
 
   // Die Daten einer Rechnung ändern
   void updateInvoice(
@@ -141,3 +137,16 @@ class Invoice {
     return totalSum; // auf 2 Stellen nach dem Komma gekürzt mit "toStringAsFixed(2)".
   }
 }
+
+
+
+
+  // void getAllInvoices(
+  //     double itemPrice,
+  //     double quantity,
+  //     double taxPercent,
+  //     bool paid,
+  //     double invoiceID,
+  //     double invoiceDate,
+  //     double articleWhich,
+  //     double articleWhere);

@@ -13,13 +13,13 @@ void main() {
   Contact newContact = Contact(
       contactID: "12345",
       firstName: "Klaus",
-      lastName: "Maier",
-      sex: "male",
-      dayOfBirth: 02,
-      monthOfBirth: 02,
-      yearOfBirth: 1990,
-      tel1: "071711234567890",
-      email1: "test@test");
+      lastName: "Maier");
+      // sex: "male",
+      // dayOfBirth: 02,
+      // monthOfBirth: 02,
+      // yearOfBirth: 1990,
+      // tel1: "071711234567890",
+      // email1: "test@test");
   print(
       "Der neue Kontakt ${newContact.firstName} ${newContact.lastName} wurde mit der Kontakt-ID ${newContact.contactID} eingetragen.");
   print("-------------------------------------------------------------------");

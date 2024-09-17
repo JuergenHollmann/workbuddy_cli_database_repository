@@ -1,7 +1,7 @@
 // mock_database.dart
 
 import '../models/contact.dart';
-import '../models/invoice.dart';
+//import '../models/invoice.dart';
 import 'database_repository.dart';
 
 class MockDatabase implements DatabaseRepository {
@@ -14,9 +14,9 @@ class MockDatabase implements DatabaseRepository {
   // Überprüfen ob das Passwort korrekt ist
   void checkPassword(String inputPassword) {}
 
-  @override
-  // Einen User erstellen
-  void createUser(String userName, String password) {}
+  // @override
+  // // Einen User erstellen
+  // void createUser(String userName, String password) {}
 
   @override
   // Einen User aufrufen
@@ -33,7 +33,23 @@ class MockDatabase implements DatabaseRepository {
 // ----------------- Bereich Contact -----------------
   @override
   // Einen Kontakt erstellen
-  void createContact(String contactID) {}
+  void createContact(String contactID) {
+    // Eintrag in die Datenbank vorbereiten:
+    Contact newContact = Contact(
+        contactID: "12345",
+        firstName: "Klaus",
+        lastName: "Maier");
+        // sex: "male",
+        // dayOfBirth: 02,
+        // monthOfBirth: 02,
+        // yearOfBirth: 1990,
+        // tel1: "07171-12345-67890",
+        // email1: "test@test");
+    print(
+        "Der neue Kontakt ${newContact.firstName} ${newContact.lastName} wurde mit der Kontakt-ID ${newContact.contactID} eingetragen.");
+    print(
+        "---------------------------------------------------------------------");
+  }
 
   @override
   // Einen Kontakt aufrufen
@@ -41,7 +57,7 @@ class MockDatabase implements DatabaseRepository {
 
   @override
   // Alle Kontakte in einer Liste anzeigen lassen
-  List<Contact> getAllContacts() {}
+  List<Contact> getAllContacts(){return [];}
 
   @override
   // Die Daten eines Kontaktes ändern
@@ -70,7 +86,15 @@ class MockDatabase implements DatabaseRepository {
 
   @override
   // Alle Rechnungen anzeigen lassen
-  List<Invoice> allInvoices() {}
+//   List<Invoice> getAllInvoices(){
+// //List<Invoice> listAllInvoices = MockDatabase.getAllInvoicesList();
+// print(listAllInvoices);
+
+//     // print(
+//     //     "$itemPrice $quantity $taxPercent $paid $invoiceID $invoiceDate $articleWhich $articleWhere");
+//   }
+
+//   }
 
   @override
   // Die Daten einer Rechnung ändern
@@ -271,9 +295,7 @@ class MockDatabase implements DatabaseRepository {
 //   //     double articleWhich,
 //   //     double articleWhere) {}
 
-//       List<Invoice> allInvoices() { //todo
-// List<Invoice> listAllInvoices = MockDatabase.getAllInvoicesList();
-// print(listAllInvoices);
+
 
 
 

@@ -1,6 +1,6 @@
 // database_repository.dart
 import '../models/contact.dart';
-import '../models/invoice.dart';
+//import '../models/invoice.dart';
 // ignore: unused_import
 import "../models/user.dart";
 
@@ -13,8 +13,8 @@ abstract class DatabaseRepository {
   // Überprüfen ob das Passwort korrekt ist
   void checkPassword(String inputPassword);
 
-  // Einen User erstellen
-  void createUser();
+  // // Einen User erstellen
+  // void createUser();
 
   // Einen User aufrufen
   void getUser(String userName, String password);
@@ -56,8 +56,8 @@ abstract class DatabaseRepository {
   // Eine Rechnung anzeigen lassen
   void getInvoice(double invoiceID);
 
-  // Alle Rechnungen anzeigen lassen
-  List<Invoice> allInvoices();
+  // // Alle Rechnungen anzeigen lassen
+  // List<Invoice> getAllInvoices();
 
   // Die Daten einer Rechnung ändern
   void updateInvoice(double invoiceID);
